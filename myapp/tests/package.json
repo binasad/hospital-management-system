@@ -1,0 +1,14 @@
+{
+  "name": "hospital-management-tests",
+  "version": "1.0.0",
+  "description": "Selenium tests for Hospital Management System",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "chromedriver": "^137.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "selenium-webdriver": "^4.33.0"
+  }
+}

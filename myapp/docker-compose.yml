@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # React application
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm start
+
+  # Python test runner
+  tests:
+    build: .
+    depends_on:
+      - app
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./tests:/app/tests
+    command: python -m pytest tests/ -v
+    shm_size: '2gb' 
